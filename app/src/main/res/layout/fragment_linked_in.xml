@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.organize.model.CategoryViewModel" />
+        <variable
+            name="fragmentLinkedIn"
+            type="com.example.organize.LinkedInFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LinkedInFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.card.MaterialCardView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="16dp">
+
+
+                    <ImageView
+                        android:id="@+id/linkedin_icon"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitEnd"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/linkedin_icon" />
+
+
+                    <TextView
+                        android:id="@+id/linkedin_title"
+                        style="?attr/textAppearanceHeadline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="20dp"
+                        android:paddingStart="70dp"
+                        android:paddingEnd="50dp"
+                        tools:text="@string/facebook_title"
+                        android:text="@{viewModel.linkedinAccount.accountTitle}"
+                        app:layout_constraintBottom_toBottomOf="@id/linkedin_icon"
+                        app:layout_constraintEnd_toStartOf="@id/linkedin_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/linkedin_icon" />
+
+                    <TextView
+                        android:id="@+id/linkedin_id_title"
+                        style="?attr/textAppearanceBodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@string/facebook_login_title"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_title" />
+
+                    <TextView
+                        android:id="@+id/linkedin_id"
+                        style="?attr/textAppearanceHeadline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="22dp"
+                        android:layout_marginEnd="8dp"
+                        tools:text="@string/facebook_id"
+                        android:text="@{viewModel.linkedinAccount.accountLogin}"
+                        app:layout_constraintStart_toStartOf="@id/linkedin_id_title"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_id_title" />
+
+
+                    <TextView
+                        android:id="@+id/linkedin_password_title"
+                        style="?attr/textAppearanceBodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="@string/sm_password"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_id" />
+
+                    <TextView
+                        android:id="@+id/linkedin_password"
+                        style="?attr/textAppearanceHeadline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="22dp"
+                        android:layout_marginEnd="8dp"
+                        tools:text="@string/linkedin_password"
+                        android:text="@{viewModel.linkedinAccount.accountPassword}"
+                        app:layout_constraintStart_toStartOf="@id/linkedin_password_title"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_password_title" />
+
+                    <TextView
+                        android:id="@+id/linkedin_remarks_title"
+                        style="?attr/textAppearanceBodyLarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:text="@string/sm_remarks"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_password" />
+
+                    <TextView
+                        android:id="@+id/linkedin_remarks"
+                        style="?attr/textAppearanceHeadline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="8dp"
+                        tools:text="@string/linkedin_remarks"
+                        android:text="@{viewModel.linkedinAccount.accountRemarks}"
+                        app:layout_constraintStart_toStartOf="@id/linkedin_remarks_title"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_remarks_title" />
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/edit_button_linkedin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|bottom"
+                        android:layout_margin="8dp"
+                        android:onClick="@{() -> fragmentLinkedIn.goToEditScreen()}"
+                        android:contentDescription="@string/edit_button"
+                        android:src="@drawable/ic_edit"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/linkedin_remarks" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView >
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</layout>

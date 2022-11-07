@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.organize.model.CategoryViewModel" />
+        <variable
+            name="fragmentSnapchatEdit"
+            type="com.example.organize.SnapchatEditFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SnapchatEditFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/sc_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:scaleType="fitEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/snapchat" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sc_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/title_sm"
+                app:layout_constraintBottom_toBottomOf="@id/sc_icon"
+                app:layout_constraintEnd_toStartOf="@id/sc_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/sc_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sc_edit_title"
+                    android:text="@{viewModel.snapchatAccount.accountTitle}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sc_login"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/facebook_login_title"
+                app:layout_constraintStart_toStartOf="@id/sc_title"
+                app:layout_constraintTop_toBottomOf="@id/sc_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sc_edit_login"
+                    android:text="@{viewModel.snapchatAccount.accountLogin}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sc_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_password"
+                app:layout_constraintStart_toStartOf="@id/sc_login"
+                app:layout_constraintTop_toBottomOf="@id/sc_login"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sc_edit_password"
+                    android:text="@{viewModel.snapchatAccount.accountPassword}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/sc_remarks"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_remarks"
+                app:layout_constraintStart_toStartOf="@id/sc_password"
+                app:layout_constraintTop_toBottomOf="@id/sc_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/sc_edit_remarks"
+                    android:text="@{viewModel.snapchatAccount.accountRemarks}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/sc_submit_button"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/sm_save_button"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="17sp"
+                android:onClick="@{() -> fragmentSnapchatEdit.saveSnapchatAccountDetails()}"
+                app:backgroundTint="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sc_remarks" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

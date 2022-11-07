@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.organize.model.CategoryViewModel" />
+
+        <variable
+            name="fragmentInstagramEdit"
+            type="com.example.organize.InstagramEditFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".InstagramEditFragment">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/ig_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:scaleType="fitEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ig_icon" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ig_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/title_sm"
+                app:layout_constraintBottom_toBottomOf="@id/ig_icon"
+                app:layout_constraintEnd_toStartOf="@id/ig_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ig_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ig_edit_title"
+                    android:text="@{viewModel.instagramAccount.accountTitle}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ig_login"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/facebook_login_title"
+                app:layout_constraintStart_toStartOf="@id/ig_title"
+                app:layout_constraintTop_toBottomOf="@id/ig_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ig_edit_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.instagramAccount.accountLogin}"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ig_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_password"
+                app:layout_constraintStart_toStartOf="@id/ig_login"
+                app:layout_constraintTop_toBottomOf="@id/ig_login"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ig_edit_password"
+                    android:text="@{viewModel.instagramAccount.accountPassword}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ig_remarks"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_remarks"
+                app:layout_constraintStart_toStartOf="@id/ig_password"
+                app:layout_constraintTop_toBottomOf="@id/ig_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ig_edit_remarks"
+                    android:text="@{viewModel.instagramAccount.accountRemarks}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/ig_submit_button"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/sm_save_button"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimary"
+                android:onClick="@{() -> fragmentInstagramEdit.saveInstagramAccountDetails()}"
+                android:textSize="17sp"
+                app:backgroundTint="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ig_remarks" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

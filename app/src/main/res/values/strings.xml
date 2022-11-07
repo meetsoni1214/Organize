@@ -1,0 +1,125 @@
+<resources>
+    <string name="app_name">Organize</string>
+    <string name="password_category_image_content_des">Password Category Image</string>
+    <string name="choose_category">Choose a Category</string>
+    <string name="bank_category">Bank Accounts</string>
+    <string name="social_media_category">Social Media Accounts</string>
+    <string name="email_category">Email Accounts</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_button_content_des">clickbutton to create add new detail</string>
+    <string name="category_screen_text_bank">You haven\'t added any Bank Accounts yet, click on the + button to add your first Card ;)</string>
+    <string name="category_screen_text_socialmedia">You haven\'t added any Social Media Accounts yet, click on the + button to add your first Card ;)</string>
+    <string name="category_screen_text_email">You haven\'t added any Email Accounts yet, click on the + button to add your first Card ;)</string>
+    <string name="bank_name">"Bank\'s Name"</string>
+    <string name="account_holder_name">"Account Holder\'s Name"</string>
+    <string name="account_type">"Account Type"</string>
+    <string name="enter_bank_details">"Enter your Account Details"</string>
+    <string name="enter_extra_details">Add extra Details</string>
+    <string name="card_details_question">Do you use ATM card with this bank Account?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="name_on_card">Name on Card</string>
+    <string name="card_no">Card number</string>
+    <string name="expiry_date">Expiry Date</string>
+    <string name="cvv">CVV/CVC</string>
+    <string name="atm_pin">ATM-Pin</string>
+    <string name="upi_question">Do you use any UPI payment App (Gpay, Paytm) with this Bank Account?</string>
+    <string name="upi_pin">UPI-Pin</string>
+    <string name="mobile_banking_app_question">Do you use any Mobile Banking App with this Bank Account?</string>
+    <string name="login_pin">Login-Pin</string>
+    <string name="mobile_login_pin">Banking App Login Pin</string>
+    <string name="transaction_Pin">Transaction-Pin</string>
+    <string name="mobile_transaction_pin">Banking App Transaction Pin</string>
+    <string name="bank_submit_button">Hurray, You have done it!</string>
+    <string name="title_sm">Title</string>
+    <string name="sm_login">Login-ID</string>
+    <string name="email_login">Email-Id</string>
+    <string name="sm_password">Password</string>
+    <string name="sm_remarks">Remarks</string>
+    <string name="sm_save_button">Save Details</string>
+    <string name="sm_account_details">Enter your Account Details</string>
+    <string name="facebook_title">Meet Soni(Sample)</string>
+    <string name="facebook_login_title">Login-ID/Username</string>
+    <string name="facebook_id">sonimeet551@gmail.com</string>
+    <string name="facebook_password">fb_meet</string>
+    <string name="instagram_password">ig_meet</string>
+    <string name="facebook_remarks">Personal Facebook Account</string>
+    <string name="instagram_remarks">Personal Instagram Account</string>
+    <string name="edit_button">Edit Button</string>
+    <string name="username">meetsoni1214</string>
+    <string name="snapchat_password">sc_meet</string>
+    <string name="snapchat_remarks">Personal Snapchat Account</string>
+    <string name="linkedin_password">li_meet</string>
+    <string name="linkedin_remarks">Personal LinkedIn Account</string>
+    <string name="twitter_password">tw_meet</string>
+    <string name="twitter_remarks">Personal Twitter Account</string>
+    <string name="facebook_screen_title">Facebook Account Details</string>
+    <string name="instagram_screen_title">Instagram Account Details</string>
+    <string name="twitter_screen_title">Twitter Account Details</string>
+    <string name="linkedin_screen_title">LinkedIn Account Details</string>
+    <string name="snapchat_screen_title">Snapchat Account Details</string>
+    <string name="edit_fb_details">Edit Facebook Account Details</string>
+    <string name="edit_ig_details">Edit Instagram Account Details</string>
+    <string name="edit_tw_details">Edit Twitter Account Details</string>
+    <string name="edit_li_details">Edit LinkedIn Account Details</string>
+    <string name="edit_sc_details">Edit Snapchat Account Details</string>
+    <string name="edit_email_details">Edit Email Account Details</string>
+    <string name="edit_account_details">Edit Account Details</string>
+    <string name="delete_details">Delete</string>
+    <string name="share_details">Share</string>
+    <string name="delete_question_email">Are you sure you want to delete your Email Account details?</string>
+    <string name="delete_question_social">Are you sure you want to delete your Account details?</string>
+    <string name="email_account_deleted">Email Account Details Deleted</string>
+    <string name="account_deleted">Account Details Deleted</string>
+    <string name="share_email_detail">%1$s \n Email-Id:- %2$s \n Password:- %3$s \n\n Remarks:- %4$s</string>
+    <string name="share_socials_detail">%1$s \n Login-Id/Username:- %2$s \n Password:- %3$s \n\n Remarks:- %4$s</string>
+    <string name="account_no">Account Number</string>
+    <string name="ifsc_code">IFSC</string>
+    <string name="mobile_no">Registered Mobile No.</string>
+    <string name="bank_email">Registered Email-id</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="linkedin">LinkedIn</string>
+    <string name="twitter">Twitter</string>
+    <string name="snapchat">Snapchat</string>
+    <string name="next_button">Next</string>
+    <string name="bank_of_baroda">Bank of Baroda</string>
+    <string name="meet_soni">Meet Soni</string>
+    <string name="saving">Saving</string>
+    <string name="ac_no">09330100020471</string>
+    <string name="ifsc">BARB0USMANP</string>
+    <string name="mobileno">6355917819</string>
+    <string name="ac_card_no">6522112005066799</string>
+    <string name="ac_card_expiry_date">06/50</string>
+    <string name="ac_card_cvv">271</string>
+    <string name="ac_card_atm_pin">4121</string>
+    <string name="ac_upi_pin">1112</string>
+    <string name="ac_m_pin">meet@soni</string>
+    <string name="ac_t_pin">5972</string>
+    <string name="email_ac_details">Email Account Details</string>
+    <string name="ac_details">Account Details</string>
+    <string name="bank_ac_details">Bank Account Details</string>
+    <string-array name="AccountTypes">
+        <item>Saving</item>
+        <item>Current</item>
+    </string-array>
+    <string-array name="BankNames">
+        <item>"AMBARNATH JAI-HIND CO-OP.BANK LTD"</item>
+        <item>"AU Small Finance Bank"</item>
+        <item>"Abhyudaya Co-Operative Bank"</item>
+        <item>"ARUNACHAL PRADESH RURAL BANK"</item>
+        <item>"Adarsh Co-operative Bank"</item>
+        <item>"Ahmednagar Merchant's Co-operative Bank"</item>
+        <item>"Ahmednagar Shahar Sahakari Bank Ltd"</item>
+        <item>"Airtel Payments Bank"</item>
+        <item>"Ajantha Urban Co-Op Bank Ltd"</item>
+        <item>"Akhand Anand Co Operative Bank ltd."</item>
+        <item>"Allahabad Bank (Now Indian Bank)"</item>
+        <item>"Ambajogai Peoples Co-Operative Bank Ltd"</item>
+        <item>"Amreli Jilla Madhyastha Sahakari Bank Ltd"</item>
+        <item>"Andhra Bank(Now: Union Bank"</item>
+        <item>"Andhra Pradesh Grameena Vikas Bank"</item>
+        <item>"Andhra Pradesh Mahesh Co-Operative Urban Bank Ltd."</item>
+    </string-array>
+</resources>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/passwordCategoriesFragment">
+    <fragment
+        android:id="@+id/passwordCategoriesFragment"
+        android:name="com.example.organize.PasswordCategoriesFragment"
+        android:label="@string/choose_category"
+        tools:layout="@layout/fragment_password_categories">
+        <action
+            android:id="@+id/action_passwordCategoriesFragment_to_emailCategoryFragment"
+            app:destination="@id/emailCategoryFragment" />
+        <action
+            android:id="@+id/action_passwordCategoriesFragment_to_bankCategoryFragment"
+            app:destination="@id/bankCategoryFragment" />
+        <action
+            android:id="@+id/action_passwordCategoriesFragment_to_socialMediaCategoryFragment"
+            app:destination="@id/socialMediaCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankCategoryFragment"
+        android:name="com.example.organize.BankCategoryFragment"
+        android:label="@string/bank_category"
+        tools:layout="@layout/fragment_bank_category" >
+        <action
+            android:id="@+id/action_bankCategoryFragment_to_bankOneFragment"
+            app:destination="@id/bankOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailCategoryFragment"
+        android:name="com.example.organize.EmailCategoryFragment"
+        android:label="@string/email_category"
+        tools:layout="@layout/fragment_email_category" >
+        <action
+            android:id="@+id/action_emailCategoryFragment_to_emailOneFragment"
+            app:destination="@id/emailOneFragment" />
+        <action
+            android:id="@+id/action_emailCategoryFragment_to_emailFinalFragment"
+            app:destination="@id/emailFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/socialMediaCategoryFragment"
+        android:name="com.example.organize.SocialMediaCategoryFragment"
+        android:label="@string/social_media_category"
+        tools:layout="@layout/fragment_social_media_category" >
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_socialMediaOneFragment"
+            app:destination="@id/socialMediaOneFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_instagramFragment"
+            app:destination="@id/instagramFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_snapchatFragment"
+            app:destination="@id/snapchatFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_linkedInFragment"
+            app:destination="@id/linkedInFragment" />
+        <action
+            android:id="@+id/action_socialMediaCategoryFragment_to_socialMediaFinalFragment"
+            app:destination="@id/socialMediaFinalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankOneFragment"
+        android:name="com.example.organize.BankOneFragment"
+        android:label="@string/enter_bank_details"
+        tools:layout="@layout/fragment_bank_one" >
+        <action
+            android:id="@+id/action_bankOneFragment_to_bankTwoFragment"
+            app:destination="@id/bankTwoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankTwoFragment"
+        android:name="com.example.organize.BankTwoFragment"
+        android:label="@string/enter_extra_details"
+        tools:layout="@layout/fragment_bank_two" >
+        <action
+            android:id="@+id/action_bankTwoFragment_to_bankFinalFragment"
+            app:destination="@id/bankFinalFragment"
+            app:popUpTo="@id/bankCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailOneFragment"
+        android:name="com.example.organize.EmailOneFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_email_one">
+        <action
+            android:id="@+id/action_emailOneFragment_to_emailFinalFragment"
+            app:destination="@id/emailFinalFragment"
+            app:popUpTo="@id/emailCategoryFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_emailOneFragment_to_emailCategoryFragment"
+            app:destination="@id/emailCategoryFragment"
+            app:popUpTo="@id/emailCategoryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/socialMediaOneFragment"
+        android:name="com.example.organize.SocialMediaOneFragment"
+        android:label="@string/sm_account_details"
+        tools:layout="@layout/fragment_social_media_one" >
+        <action
+            android:id="@+id/action_socialMediaOneFragment_to_socialMediaFinalFragment"
+            app:destination="@id/socialMediaFinalFragment"
+            app:popUpTo="@id/socialMediaCategoryFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <action
+            android:id="@+id/action_socialMediaOneFragment_to_socialMediaCategoryFragment"
+            app:destination="@id/socialMediaCategoryFragment"
+            app:popUpTo="@id/socialMediaCategoryFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookFragment"
+        android:name="com.example.organize.FacebookFragment"
+        android:label="@string/facebook_screen_title"
+        tools:layout="@layout/fragment_facebook" >
+        <action
+            android:id="@+id/action_facebookFragment_to_facebookEditFragment"
+            app:destination="@id/facebookEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instagramFragment"
+        android:name="com.example.organize.InstagramFragment"
+        android:label="@string/instagram_screen_title"
+        tools:layout="@layout/fragment_instagram" >
+        <action
+            android:id="@+id/action_instagramFragment_to_instagramEditFragment"
+            app:destination="@id/instagramEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/snapchatFragment"
+        android:name="com.example.organize.SnapchatFragment"
+        android:label="@string/snapchat_screen_title"
+        tools:layout="@layout/fragment_snapchat" >
+        <action
+            android:id="@+id/action_snapchatFragment_to_snapchatEditFragment"
+            app:destination="@id/snapchatEditFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/linkedInFragment"
+        android:name="com.example.organize.LinkedInFragment"
+        android:label="@string/linkedin_screen_title"
+        tools:layout="@layout/fragment_linked_in" >
+        <action
+            android:id="@+id/action_linkedInFragment_to_linkedInEditFragment"
+            app:destination="@id/linkedInEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/twitterFragment"
+        android:name="com.example.organize.TwitterFragment"
+        android:label="@string/twitter_screen_title"
+        tools:layout="@layout/fragment_twitter" >
+        <action
+            android:id="@+id/action_twitterFragment_to_twitterEditFragment"
+            app:destination="@id/twitterEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/facebookEditFragment"
+        android:name="com.example.organize.FacebookEditFragment"
+        android:label="@string/edit_fb_details"
+        tools:layout="@layout/fragment_facebook_edit">
+        <action
+            android:id="@+id/action_facebookEditFragment_to_facebookFragment"
+            app:destination="@id/facebookFragment"
+            app:popUpTo="@id/facebookFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/instagramEditFragment"
+        android:name="com.example.organize.InstagramEditFragment"
+        android:label="@string/edit_ig_details"
+        tools:layout="@layout/fragment_instagram_edit">
+        <action
+            android:id="@+id/action_instagramEditFragment_to_instagramFragment"
+            app:destination="@id/instagramFragment"
+            app:popUpTo="@id/instagramFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/twitterEditFragment"
+        android:name="com.example.organize.TwitterEditFragment"
+        android:label="@string/edit_tw_details"
+        tools:layout="@layout/fragment_twitter_edit" >
+        <action
+            android:id="@+id/action_twitterEditFragment_to_twitterFragment"
+            app:destination="@id/twitterFragment"
+            app:popUpTo="@id/twitterFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/snapchatEditFragment"
+        android:name="com.example.organize.SnapchatEditFragment"
+        android:label="@string/edit_sc_details"
+        tools:layout="@layout/fragment_snapchat_edit" >
+        <action
+            android:id="@+id/action_snapchatEditFragment_to_snapchatFragment"
+            app:destination="@id/snapchatFragment"
+            app:popUpTo="@id/snapchatFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/linkedInEditFragment"
+        android:name="com.example.organize.LinkedInEditFragment"
+        android:label="@string/edit_li_details"
+        tools:layout="@layout/fragment_linked_in_edit" >
+        <action
+            android:id="@+id/action_linkedInEditFragment_to_linkedInFragment"
+            app:destination="@id/linkedInFragment"
+            app:popUpTo="@id/linkedInFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bankFinalFragment"
+        android:name="com.example.organize.BankFinalFragment"
+        android:label="@string/bank_ac_details">
+        <action
+            android:id="@+id/action_bankFinalFragment_to_bankOneFragment"
+            app:destination="@id/bankOneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/socialMediaFinalFragment"
+        android:name="com.example.organize.SocialMediaFinalFragment"
+        android:label="@string/ac_details">
+        <action
+            android:id="@+id/action_socialMediaFinalFragment_to_socialMediaOneFragment"
+            app:destination="@id/socialMediaOneFragment" />
+        <argument
+            android:name="item_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailFinalFragment"
+        android:name="com.example.organize.EmailFinalFragment"
+        android:label="@string/email_ac_details">
+        <action
+            android:id="@+id/action_emailFinalFragment_to_emailOneFragment"
+            app:destination="@id/emailOneFragment" />
+        <argument
+            android:name="item_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

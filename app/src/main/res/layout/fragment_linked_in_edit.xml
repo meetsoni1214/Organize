@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.organize.model.CategoryViewModel" />
+        <variable
+            name="fragmentLinkedinEdit"
+            type="com.example.organize.LinkedInEditFragment" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".LinkedInEditFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            >
+
+            <ImageView
+                android:id="@+id/li_icon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:scaleType="fitEnd"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/linkedin_icon" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/title_sm"
+                app:layout_constraintBottom_toBottomOf="@id/li_icon"
+                app:layout_constraintEnd_toStartOf="@id/li_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/li_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/li_edit_title"
+                    android:text="@{viewModel.linkedinAccount.accountTitle}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_login"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_login"
+                app:layout_constraintStart_toStartOf="@id/li_title"
+                app:layout_constraintTop_toBottomOf="@id/li_title">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/li_edit_login"
+                    android:text="@{viewModel.linkedinAccount.accountLogin}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_password"
+                app:layout_constraintStart_toStartOf="@id/li_login"
+                app:layout_constraintTop_toBottomOf="@id/li_login"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/li_edit_password"
+                    android:text="@{viewModel.linkedinAccount.accountPassword}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/li_remarks"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="@string/sm_remarks"
+                app:layout_constraintStart_toStartOf="@id/li_password"
+                app:layout_constraintTop_toBottomOf="@id/li_password">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/li_edit_remarks"
+                    android:text="@{viewModel.linkedinAccount.accountRemarks}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/li_submit_button"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/sm_save_button"
+                android:onClick="@{() -> fragmentLinkedinEdit.saveLinkedInAccountDetails()}"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="17sp"
+                app:backgroundTint="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/li_remarks" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

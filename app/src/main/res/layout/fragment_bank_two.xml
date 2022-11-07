@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.organize.model.CategoryViewModel" />
+        <variable
+            name="fragmentBankTwo"
+            type="com.example.organize.BankTwoFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BankTwoFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bank_two_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/atm_card_question"
+                style="?attr/textAppearanceDisplayMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/card_details_question"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/atm_card_options"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:atmCardCheckedButton="@{viewModel.atmCardStatus}"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/atm_card_question"
+                app:layout_constraintTop_toBottomOf="@id/atm_card_question">
+
+                <RadioButton
+                    android:id="@+id/atm_card_option_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> fragmentBankTwo.yesOptionCardClick()}"
+                    android:text="@string/yes" />
+
+                <RadioButton
+
+                    android:id="@+id/atm_card_option_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:onClick="@{() -> fragmentBankTwo.noOptionCardClick()}"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_holder_name_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/name_on_card"
+                app:layout_constraintStart_toStartOf="@id/atm_card_options"
+                app:layout_constraintTop_toBottomOf="@id/atm_card_options">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_holder_name"
+                    android:text="@{viewModel.extraBankAccount.nameOnCard}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_no_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/card_no"
+                app:layout_constraintEnd_toEndOf="@id/card_holder_name_layout"
+                app:layout_constraintStart_toStartOf="@id/card_holder_name_layout"
+                app:layout_constraintTop_toBottomOf="@id/card_holder_name_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_no"
+                    android:text="@{viewModel.extraBankAccount.cardNumber}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="16" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_expiry_date_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/expiry_date"
+                android:paddingStart="0dp"
+                android:paddingEnd="4dp"
+                app:endIconDrawable="@drawable/ic_calendar"
+                app:endIconMode="custom"
+                app:layout_constraintLeft_toLeftOf="@id/card_no_layout"
+                app:layout_constraintRight_toLeftOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/card_no_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_expiry_date"
+                    android:text="@{viewModel.extraBankAccount.cardExpiryDate}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textCapCharacters" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/card_cvv_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/cvv"
+                android:paddingStart="4dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintLeft_toRightOf="@id/guideline2"
+                app:layout_constraintRight_toRightOf="@id/card_no_layout"
+                app:layout_constraintTop_toBottomOf="@id/card_no_layout"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/card_cvv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.extraBankAccount.cardCVV}"
+                    android:inputType="numberPassword"
+                    android:maxLength="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/atm_pin_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/atm_pin"
+                app:layout_constraintEnd_toEndOf="@id/card_cvv_layout"
+                app:layout_constraintStart_toStartOf="@id/card_expiry_date_layout"
+                app:layout_constraintTop_toBottomOf="@id/card_expiry_date_layout"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/atm_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.extraBankAccount.cardAtmPin}"
+                    android:inputType="numberPassword"
+                    android:maxLength="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/upi_option_question"
+                style="?attr/textAppearanceDisplayMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:padding="8dp"
+                android:text="@string/upi_question"
+                app:layout_constraintStart_toStartOf="@id/atm_pin_layout"
+                app:layout_constraintTop_toBottomOf="@id/atm_pin_layout" />
+
+            <RadioGroup
+                android:id="@+id/upi_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:upiCheckedButton="@{viewModel.upiStatus}"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/upi_option_question"
+                app:layout_constraintTop_toBottomOf="@id/upi_option_question">
+
+                <RadioButton
+                    android:id="@+id/upi_option_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> fragmentBankTwo.yesUpiOptionClick()}"
+                    android:text="@string/yes" />
+
+                <RadioButton
+
+                    android:id="@+id/upi_option_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:onClick="@{() -> fragmentBankTwo.noUpiOptionClick()}"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/upi_pin_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/upi_pin"
+                app:layout_constraintStart_toStartOf="@id/upi_option"
+                app:layout_constraintTop_toBottomOf="@id/upi_option"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/upi_pin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.extraBankAccount.upiPin}"
+                    android:inputType="numberPassword"
+                    android:maxLength="6" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/mobile_banking_app_question"
+                style="?attr/textAppearanceDisplayMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:padding="8dp"
+                android:text="@string/mobile_banking_app_question"
+                app:layout_constraintStart_toStartOf="@id/upi_pin_layout"
+                app:layout_constraintTop_toBottomOf="@id/upi_pin_layout" />
+
+            <RadioGroup
+                android:id="@+id/banking_app_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:mAppCheckedButton="@{viewModel.mobileAppStatus}"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@id/mobile_banking_app_question"
+                app:layout_constraintTop_toBottomOf="@id/mobile_banking_app_question">
+
+                <RadioButton
+                    android:id="@+id/banking_app_option_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{() -> fragmentBankTwo.yesBankingAppOptionClick()}"
+                    android:text="@string/yes" />
+
+                <RadioButton
+
+                    android:id="@+id/banking_app_option_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:onClick="@{() -> fragmentBankTwo.noBankingAppOptionClick()}"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/banking_app_login_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/login_pin"
+                app:layout_constraintStart_toStartOf="@id/banking_app_option"
+                app:layout_constraintTop_toBottomOf="@id/banking_app_option">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/banking_app_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.extraBankAccount.mobileLoginPin}"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/banking_app_password_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:layout_marginTop="10dp"
+                android:hint="@string/transaction_Pin"
+                app:layout_constraintStart_toStartOf="@id/banking_app_login_layout"
+                app:layout_constraintTop_toBottomOf="@id/banking_app_login_layout"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/teal_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/banking_app_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.extraBankAccount.transactionPin}"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/submit_button_bank_two"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/bank_submit_button"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="17sp"
+                android:onClick="@{() -> fragmentBankTwo.submitDetail()}"
+                app:backgroundTint="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/banking_app_password_layout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

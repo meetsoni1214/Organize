@@ -9,18 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.example.organize.adapter.SocialMediaAdapter
 import com.example.organize.adapter.SocialMediaAdapter2
 import com.example.organize.data.SettingsDataStore
 import com.example.organize.data.SocialMediaAccount
 import com.example.organize.databinding.FragmentSocialMediaCategoryBinding
-import com.example.organize.model.CategoryViewModel
 import com.example.organize.model.SocialMediaViewModel
 import com.example.organize.model.SocialMediaViewModelFactory
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.launch
 
 class SocialMediaCategoryFragment : Fragment() {

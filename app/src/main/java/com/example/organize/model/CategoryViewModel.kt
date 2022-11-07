@@ -19,23 +19,8 @@ class CategoryViewModel : ViewModel() {
     private val _extraBankAccount = MutableLiveData<BankAccountExtra>()
     val extraBankAccount: LiveData<BankAccountExtra> = _extraBankAccount
 
-//    private val _socialMediaAccount = MutableLiveData<SocialMediaAccount>()
-//    val socialMediaAccount: LiveData<SocialMediaAccount> = _socialMediaAccount
 
-    private val _facebookAccount = MutableLiveData<FacebookAccount>()
-    val facebookAccount: LiveData<FacebookAccount> = _facebookAccount
 
-    private val _instagramAccount = MutableLiveData<InstagramAccount>()
-    val instagramAccount: LiveData<InstagramAccount> = _instagramAccount
-
-    private val _snapchatAccount = MutableLiveData<SnapchatAccount>()
-    val snapchatAccount: LiveData<SnapchatAccount> = _snapchatAccount
-
-    private val _twitterAccount = MutableLiveData<TwitterAccount>()
-    val twitterAccount: LiveData<TwitterAccount> = _twitterAccount
-
-    private val _linkedinAccount = MutableLiveData<LinkedinAccount>()
-    val linkedinAccount: LiveData<LinkedinAccount> = _linkedinAccount
 
     private val _atmCardStatus = MutableLiveData<SelectedStatus>()
     val atmCardStatus: LiveData<SelectedStatus> = _atmCardStatus
@@ -50,16 +35,6 @@ class CategoryViewModel : ViewModel() {
         _selectedCategoryld.value = category
     }
     init {
-        val fbAccount = FacebookAccount()
-        val igAccount = InstagramAccount()
-        val scAccount = SnapchatAccount()
-        val twAccount = TwitterAccount()
-        val liAccount = LinkedinAccount()
-        _facebookAccount.value = fbAccount
-        _instagramAccount.value = igAccount
-        _snapchatAccount.value = scAccount
-        _twitterAccount.value = twAccount
-        _linkedinAccount.value = liAccount
         _atmCardStatus.value = SelectedStatus.YES
         _upiStatus.value = SelectedStatus.YES
         _mobileAppStatus.value = SelectedStatus.YES
@@ -72,31 +47,7 @@ class CategoryViewModel : ViewModel() {
         val extraDetails = BankAccountExtra(nameOnCard, cardNum, expiryDate, cardCvv, cardAtmPin, UpiPin, mobileLogin, mobilePass)
         _extraBankAccount.value = extraDetails
     }
-//    fun setSocialMediaAccount(title: String, loginId: String, password: String, remarks: String) {
-//        val account = SocialMediaAccount(title, loginId, password, remarks)
-//        _socialMediaAccount.value = account
-//    }
 
-    fun setFacebookAccount(title: String, loginId: String, password: String, remarks: String) {
-        val account = FacebookAccount(title, loginId, password, remarks)
-        _facebookAccount.value = account
-    }
-    fun setInstagramAccount(title: String, loginId: String, password: String, remarks: String) {
-        val account = InstagramAccount(title, loginId, password, remarks)
-        _instagramAccount.value = account
-    }
-    fun setSnapchatAccount(title: String, loginId: String, password: String, remarks: String) {
-        val account = SnapchatAccount(title, loginId, password, remarks)
-        _snapchatAccount.value = account
-    }
-    fun setTwitterAccount(title: String, loginId: String, password: String, remarks: String) {
-        val account = TwitterAccount(title, loginId, password, remarks)
-        _twitterAccount.value = account
-    }
-    fun setLinkedInAccount(title: String, loginId: String, password: String, remarks: String) {
-        val account = LinkedinAccount(title, loginId, password, remarks)
-        _linkedinAccount.value = account
-    }
     fun noAtmSelected() {
         _atmCardStatus.value = SelectedStatus.NO
     }
@@ -122,7 +73,4 @@ class CategoryViewModel : ViewModel() {
         yesUpiSelected()
         yesBankingAppSelected()
     }
-//    fun resetSocialMediaAcDetails() {
-//        _socialMediaAccount.value = SocialMediaAccount()
-//    }
 }

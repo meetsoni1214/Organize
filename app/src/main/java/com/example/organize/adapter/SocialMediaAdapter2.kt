@@ -6,12 +6,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.organize.R
-import com.example.organize.data.DataSource
-import com.example.organize.data.DataSource.SocialMediaPlatforms
 import com.example.organize.data.SocialMediaAccount
-import com.example.organize.databinding.ListItem2Binding
 import com.example.organize.databinding.ListItem3Binding
-import com.example.organize.model.SocialMediaCard
 
 class SocialMediaAdapter2(private val onItemClicked: (SocialMediaAccount) -> Unit): ListAdapter<SocialMediaAccount, SocialMediaAdapter2.SocialMediaViewHolder2>(DiffCallback){
 

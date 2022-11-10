@@ -22,7 +22,6 @@ class EmailOneFragment : Fragment() {
 
     private val navigationArgs: EmailFinalFragmentArgs by navArgs()
 
-//    private val sharedViewModel: CategoryViewModel by activityViewModels()
 
     private val emailViewModel: EmailViewModel by activityViewModels {
         EmailViewModelFactory(

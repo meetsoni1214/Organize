@@ -100,6 +100,10 @@
     <string name="email_ac_details">Email Account Details</string>
     <string name="ac_details">Account Details</string>
     <string name="bank_ac_details">Bank Account Details</string>
+    <string name="edit_bank_ac_details">Edit Bank Account Details</string>
+    <string name="bank_account_delete">Bank Account Details Deleted</string>
+    <string name="add_bank_account">Add Bank Account Details</string>
+    <string name="delete_question_bank">Are you sure you want to delete your Bank Account Details?</string>
     <string-array name="AccountTypes">
         <item>Saving</item>
         <item>Current</item>
@@ -118,8 +122,32 @@
         <item>"Allahabad Bank (Now Indian Bank)"</item>
         <item>"Ambajogai Peoples Co-Operative Bank Ltd"</item>
         <item>"Amreli Jilla Madhyastha Sahakari Bank Ltd"</item>
-        <item>"Andhra Bank(Now: Union Bank"</item>
+        <item>"Andhra Bank(Now: Union Bank)"</item>
         <item>"Andhra Pradesh Grameena Vikas Bank"</item>
         <item>"Andhra Pradesh Mahesh Co-Operative Urban Bank Ltd."</item>
+        <item>"Andhra Pragathi Grameena Bank"</item>
+        <item>"Apna Sahakari Bank"</item>
+        <item>"Arihant Urban Co-Operative Bank Ltd"</item>
+        <item>"Arvind Sahakari Bank Ltd"</item>
+        <item>"Assam Gramin Vikash Bank"</item>
+        <item>"Axis Bank"</item>
+        <item>"BANASKANTHA DISTRICT CENTRAL CO-OP BANK LTD."</item>
+        <item>"Balotra Urban Co-op Bank Ltd"</item>
+        <item>"Bandhan Bank"</item>
+        <item>"Bank of America"</item>
+        <item>"Bank of Baroda"</item>
+        <item>"Bank of India"</item>
+        <item>"Bank of Maharashtra"</item>
+        <item>"Baran Nagrik Sahkari Bank Ltd,Baran"</item>
+        <item>"Baroda Gujarat Gramin Bank"</item>
+        <item>"Baroda Rajasthan Kshetriya Gramin Bank"</item>
+        <item>"Baroda UP Gramin Bank"</item>
+        <item>"Bassein Catholic Co-operative Bank"</item>
+        <item>"Bhadradri Cooperative Urban Bank Ltd"</item>
+        <item>"Bhagini Nivedita Sahakari Bank Ltd."</item>
+        <item>"Bharat Co-operative Bank (Mumbai)"</item>
+        <item>"Bhavnagar DCB"</item>
+        <item>"Bhilwara Urban Co-operative Bank"</item>
+        <item>"Bombay Mercantile Co-op Bank Ltd"</item>
     </string-array>
 </resources>

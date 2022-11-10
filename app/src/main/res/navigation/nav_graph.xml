@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_bankCategoryFragment_to_bankOneFragment"
             app:destination="@id/bankOneFragment" />
+        <action
+            android:id="@+id/action_bankCategoryFragment_to_bankFinalFragment"
+            app:destination="@id/bankFinalFragment" />
     </fragment>
     <fragment
         android:id="@+id/emailCategoryFragment"
@@ -70,21 +73,24 @@
     <fragment
         android:id="@+id/bankOneFragment"
         android:name="com.example.organize.BankOneFragment"
-        android:label="@string/enter_bank_details"
-        tools:layout="@layout/fragment_bank_one" >
+        android:label="{title}"
+        tools:layout="@layout/fragment_bank_one">
         <action
-            android:id="@+id/action_bankOneFragment_to_bankTwoFragment"
-            app:destination="@id/bankTwoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/bankTwoFragment"
-        android:name="com.example.organize.BankTwoFragment"
-        android:label="@string/enter_extra_details"
-        tools:layout="@layout/fragment_bank_two" >
-        <action
-            android:id="@+id/action_bankTwoFragment_to_bankFinalFragment"
+            android:id="@+id/action_bankOneFragment_to_bankFinalFragment"
             app:destination="@id/bankFinalFragment"
             app:popUpTo="@id/bankCategoryFragment" />
+        <action
+            android:id="@+id/action_bankOneFragment_to_bankCategoryFragment"
+            app:destination="@id/bankCategoryFragment"
+            app:popUpTo="@id/bankCategoryFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/emailOneFragment"
@@ -238,6 +244,10 @@
         <action
             android:id="@+id/action_bankFinalFragment_to_bankOneFragment"
             app:destination="@id/bankOneFragment" />
+        <argument
+            android:name="item_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
     <fragment
         android:id="@+id/socialMediaFinalFragment"

@@ -4,14 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <data>
-        <variable
-            name="viewModel"
-            type="com.example.organize.model.CategoryViewModel" />
-        <variable
-            name="fragmentbankfinal"
-            type="com.example.organize.BankFinalFragment" />
-    </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,7 +16,6 @@
             android:layout_gravity="end|bottom"
             android:layout_margin="22dp"
             android:layout_marginEnd="22dp"
-            android:onClick="@{() -> fragmentbankfinal.gotoEditScreen()}"
             android:contentDescription="@string/edit_button"
             android:src="@drawable/ic_edit"
             app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +72,6 @@
                             android:paddingStart="70dp"
                             android:paddingEnd="50dp"
                             tools:text="@string/bank_of_baroda"
-                            android:text="@{viewModel.bankAccount.bankName}"
                             app:layout_constraintBottom_toBottomOf="@id/bank_logo"
                             app:layout_constraintEnd_toStartOf="@id/bank_logo"
                             app:layout_constraintStart_toStartOf="parent"
@@ -108,7 +98,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/meet_soni"
-                            android:text="@{viewModel.bankAccount.accountHolderName}"
                             app:layout_constraintStart_toStartOf="@id/ac_holder_name_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_holder_name_title" />
 
@@ -133,7 +122,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/saving"
-                            android:text="@{viewModel.bankAccount.accountType}"
                             app:layout_constraintStart_toStartOf="@id/ac_type_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_type_title" />
 
@@ -157,7 +145,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_no"
-                            android:text="@{viewModel.bankAccount.accountNo}"
                             app:layout_constraintStart_toStartOf="@id/ac_no_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_no_title" />
 
@@ -182,7 +169,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ifsc"
-                            android:text="@{viewModel.bankAccount.ifscNo}"
                             app:layout_constraintStart_toStartOf="@id/ifsc_no_title"
                             app:layout_constraintTop_toBottomOf="@id/ifsc_no_title" />
 
@@ -207,7 +193,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/mobileno"
-                            android:text="@{viewModel.bankAccount.regMobileNo}"
                             app:layout_constraintStart_toStartOf="@id/ac_mob_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_mob_title" />
 
@@ -232,9 +217,32 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/facebook_id"
-                            android:text="@{viewModel.bankAccount.regEmailId}"
                             app:layout_constraintStart_toStartOf="@id/ac_email_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_email_title" />
+
+                        <TextView
+                            android:id="@+id/ac_remarks_title"
+                            style="?attr/textAppearanceBodyLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:text="@string/sm_remarks"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/ac_email" />
+
+                        <TextView
+                            android:id="@+id/ac_remarks"
+                            style="?attr/textAppearanceHeadline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="22dp"
+                            android:layout_marginEnd="8dp"
+                            tools:text="@string/facebook_id"
+                            app:layout_constraintStart_toStartOf="@id/ac_remarks_title"
+                            app:layout_constraintTop_toBottomOf="@id/ac_remarks_title" />
+
 
 
                         <TextView
@@ -245,7 +253,7 @@
                             android:layout_margin="20dp"
                             android:text="@string/name_on_card"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/ac_email" />
+                            app:layout_constraintTop_toBottomOf="@id/ac_remarks" />
 
                         <TextView
                             android:id="@+id/ac_card_name"
@@ -257,7 +265,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/meet_soni"
-                            android:text="@{viewModel.extraBankAccount.nameOnCard}"
                             app:layout_constraintStart_toStartOf="@id/ac_card_name_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_card_name_title" />
 
@@ -282,7 +289,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_card_no"
-                            android:text="@{viewModel.extraBankAccount.cardNumber}"
                             app:layout_constraintStart_toStartOf="@id/ac_card_no_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_card_no_title" />
 
@@ -306,7 +312,6 @@
                             android:paddingEnd="10dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_card_expiry_date"
-                            android:text="@{viewModel.extraBankAccount.cardExpiryDate}"
                             app:layout_constraintStart_toStartOf="@id/ac_card_expiry_date_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_card_expiry_date_title"
                             app:layout_constraintEnd_toEndOf="@id/guideline3"/>
@@ -332,7 +337,6 @@
                             android:paddingEnd="10dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_card_cvv"
-                            android:text="@{viewModel.extraBankAccount.cardCVV}"
                             app:layout_constraintStart_toStartOf="@id/ac_card_cvv_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_card_cvv_title"
                             app:layout_constraintStart_toEndOf="@id/guideline3"/>
@@ -365,7 +369,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_card_atm_pin"
-                            android:text="@{viewModel.extraBankAccount.cardAtmPin}"
                             app:layout_constraintStart_toStartOf="@id/ac_card_atm_pin_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_card_atm_pin_title" />
 
@@ -389,7 +392,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_upi_pin"
-                            android:text="@{viewModel.extraBankAccount.upiPin}"
                             app:layout_constraintStart_toStartOf="@id/ac_upi_pin_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_upi_pin_title" />
 
@@ -414,7 +416,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_m_pin"
-                            android:text="@{viewModel.extraBankAccount.mobileLoginPin}"
                             app:layout_constraintStart_toStartOf="@id/ac_mob_pin_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_mob_pin_title" />
 
@@ -439,7 +440,6 @@
                             android:paddingEnd="22dp"
                             android:layout_marginEnd="8dp"
                             tools:text="@string/ac_t_pin"
-                            android:text="@{viewModel.extraBankAccount.transactionPin}"
                             app:layout_constraintStart_toStartOf="@id/ac_transaction_pin_title"
                             app:layout_constraintTop_toBottomOf="@id/ac_transaction_pin_title" />
 
@@ -448,7 +448,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:background="?android:attr/listDivider"
-                            app:layout_constraintTop_toBottomOf="@id/ac_email"
+                            app:layout_constraintTop_toBottomOf="@id/ac_remarks"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             android:layout_marginTop="8dp"

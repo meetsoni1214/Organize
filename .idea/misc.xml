@@ -29,10 +29,10 @@
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/activity_twitter_one.xml" value="0.23867753623188406" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/category_main_screen.xml" value="0.25" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/dropdown_item.xml" value="0.25" />
-        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_category.xml" value="0.25" />
+        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_category.xml" value="0.1" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_final.xml" value="0.264" />
-        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_one.xml" value="0.25" />
-        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_two.xml" value="0.1" />
+        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_one.xml" value="0.1" />
+        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_bank_two.xml" value="0.264" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_email_category.xml" value="0.2" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_email_final.xml" value="0.1" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/fragment_email_one.xml" value="0.1" />
@@ -55,6 +55,7 @@
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/list_item.xml" value="0.23822463768115942" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/list_item_2.xml" value="0.2752109280835677" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/list_item_3.xml" value="0.2" />
+        <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/layout/list_item_4.xml" value="1.0" />
         <entry key="..\:/Users/MEET/Downloads/Organize2/app/src/main/res/menu/layout_menu.xml" value="0.25" />
       </map>
     </option>

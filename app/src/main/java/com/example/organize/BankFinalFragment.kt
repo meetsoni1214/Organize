@@ -76,6 +76,30 @@ class BankFinalFragment : Fragment() {
             editButtonBank.setOnClickListener {
                 editBankAccount()
             }
+            when (bankAccount.bankName) {
+                getString(R.string.bank_of_baroda) -> {
+                    binding.bankLogo.setImageResource(R.drawable.bank_of_baroda_logo)
+                }
+                getString(R.string.kalupur_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.kalupur_bank_logo)
+                }
+                getString(R.string.state_bank_india) -> {
+                    binding.bankLogo.setImageResource(R.drawable.sbi_logo)
+                }
+                getString(R.string.bank_of_india) -> {
+                    binding.bankLogo.setImageResource(R.drawable.boi)
+                }
+                getString(R.string.union_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.union_bank)
+                }
+                getString(R.string.icici_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.icici_logo)
+                }
+                else -> {
+                    binding.bankLogo.setImageResource(R.drawable.bank_image_2)
+                }
+            }
+
         }
                 if (!(bankAccount.haveCard)) {
             hideCardView()

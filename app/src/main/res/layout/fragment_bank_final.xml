@@ -59,7 +59,7 @@
                             android:scaleType="fitEnd"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/bank_image_2" />
+                            tools:srcCompat="@drawable/bank_image_2" />
 
 
                         <TextView

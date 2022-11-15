@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <CheckBox
+            android:id="@+id/bank_name_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_name"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <CheckBox
+            android:id="@+id/account_holder_name_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_holder_name"
+            app:layout_constraintTop_toBottomOf="@id/bank_name_cb"
+            app:layout_constraintStart_toStartOf="@id/bank_name_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/account_type_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_type"
+            app:layout_constraintTop_toBottomOf="@id/account_holder_name_cb"
+            app:layout_constraintStart_toStartOf="@id/account_holder_name_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/account_number_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/account_no"
+            app:layout_constraintTop_toBottomOf="@id/account_type_cb"
+            app:layout_constraintStart_toStartOf="@id/account_type_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/ifs_no_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ifsc_code"
+            app:layout_constraintTop_toBottomOf="@id/account_number_cb"
+            app:layout_constraintStart_toStartOf="@id/account_number_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/reg_mob_no_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_no"
+            app:layout_constraintTop_toBottomOf="@id/ifs_no_cb"
+            app:layout_constraintStart_toStartOf="@id/ifs_no_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/reg_email_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_email"
+            app:layout_constraintTop_toBottomOf="@id/reg_mob_no_cb"
+            app:layout_constraintStart_toStartOf="@id/reg_mob_no_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/remarks_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sm_remarks"
+            app:layout_constraintTop_toBottomOf="@id/reg_email_cb"
+            app:layout_constraintStart_toStartOf="@id/reg_email_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/card_name_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_on_card"
+            app:layout_constraintTop_toBottomOf="@id/remarks_cb"
+            app:layout_constraintStart_toStartOf="@id/remarks_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/card_no_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/card_no"
+            app:layout_constraintTop_toBottomOf="@id/card_name_cb"
+            app:layout_constraintStart_toStartOf="@id/card_name_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/card_cvv_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cvv"
+            app:layout_constraintTop_toBottomOf="@id/card_no_cb"
+            app:layout_constraintStart_toStartOf="@id/card_no_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/card_expiry_date_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/expiry_date"
+            app:layout_constraintTop_toBottomOf="@id/card_cvv_cb"
+            app:layout_constraintStart_toStartOf="@id/card_cvv_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/atm_pin_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/atm_pin"
+            app:layout_constraintTop_toBottomOf="@id/card_expiry_date_cb"
+            app:layout_constraintStart_toStartOf="@id/card_expiry_date_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/upi_pin_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upi_pin"
+            app:layout_constraintTop_toBottomOf="@id/atm_pin_cb"
+            app:layout_constraintStart_toStartOf="@id/atm_pin_cb"
+            />
+
+
+        <CheckBox
+            android:id="@+id/app_login_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_login_pin"
+            app:layout_constraintTop_toBottomOf="@id/upi_pin_cb"
+            app:layout_constraintStart_toStartOf="@id/upi_pin_cb"
+            />
+
+        <CheckBox
+            android:id="@+id/transaction_pin_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/transaction_Pin"
+            app:layout_constraintTop_toBottomOf="@id/app_login_cb"
+            app:layout_constraintStart_toStartOf="@id/app_login_cb"
+            />
+
+        <TextView
+            android:id="@+id/share_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/share"
+            app:layout_constraintTop_toBottomOf="@id/transaction_pin_cb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="18dp"
+            />
+
+        <TextView
+            android:id="@+id/cancel_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            app:layout_constraintTop_toBottomOf="@id/transaction_pin_cb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/share_text"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="18dp"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

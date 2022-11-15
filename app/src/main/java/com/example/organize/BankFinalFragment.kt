@@ -1,12 +1,16 @@
 package com.example.organize
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.CheckBox
+import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.findFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.organize.data.BankAccount
@@ -15,6 +19,7 @@ import com.example.organize.model.BankViewModel
 import com.example.organize.model.BankViewModelFactory
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import kotlin.math.exp
 
 class BankFinalFragment : Fragment() {
 
@@ -22,7 +27,6 @@ class BankFinalFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val navigationargs:BankFinalFragmentArgs by navArgs()
-
 
     private val bankViewModel: BankViewModel by activityViewModels {
         BankViewModelFactory(
@@ -76,6 +80,7 @@ class BankFinalFragment : Fragment() {
             editButtonBank.setOnClickListener {
                 editBankAccount()
             }
+        }
             when (bankAccount.bankName) {
                 getString(R.string.bank_of_baroda) -> {
                     binding.bankLogo.setImageResource(R.drawable.bank_of_baroda_logo)
@@ -99,8 +104,6 @@ class BankFinalFragment : Fragment() {
                     binding.bankLogo.setImageResource(R.drawable.bank_image_2)
                 }
             }
-
-        }
                 if (!(bankAccount.haveCard)) {
             hideCardView()
         }
@@ -158,6 +161,7 @@ class BankFinalFragment : Fragment() {
                 return true
             }
             R.id.action_share -> {
+                showShareDialog()
                 return true
             }else -> super.onOptionsItemSelected(item)
         }
@@ -176,6 +180,108 @@ class BankFinalFragment : Fragment() {
                 deleteAccount()
             }
             .show()
+    }
+    private fun showShareDialog() {
+        val inflater = requireActivity().layoutInflater
+        val dialogBinding = inflater.inflate(R.layout.share_bank_details_dialog, null)
+        val alertDialog = MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.share_title))
+            .setMessage(getString(R.string.share_desc))
+            .setCancelable(false)
+            .setView(dialogBinding)
+            .show()
+        val shareButton = dialogBinding.findViewById<TextView>(R.id.share_text)
+        val cancelButton = dialogBinding.findViewById<TextView>(R.id.cancel_text)
+
+        cancelButton.setOnClickListener {
+            alertDialog.dismiss()
+        }
+        shareButton.setOnClickListener {
+            shareDetails(dialogBinding)
+        }
+
+    }
+    private fun shareDetails(dialogBinding: View) {
+        val selectedItems = ArrayList<String>()
+
+        val bankName = dialogBinding.findViewById<CheckBox>(R.id.bank_name_cb)
+        val acHolderName = dialogBinding.findViewById<CheckBox>(R.id.account_holder_name_cb)
+        val acType = dialogBinding.findViewById<CheckBox>(R.id.account_type_cb)
+        val acNo = dialogBinding.findViewById<CheckBox>(R.id.account_number_cb)
+        val ifscNo = dialogBinding.findViewById<CheckBox>(R.id.ifs_no_cb)
+        val regMobNo = dialogBinding.findViewById<CheckBox>(R.id.reg_mob_no_cb)
+        val regEmail = dialogBinding.findViewById<CheckBox>(R.id.reg_email_cb)
+        val nameOnCard = dialogBinding.findViewById<CheckBox>(R.id.card_name_cb)
+        val cardNo = dialogBinding.findViewById<CheckBox>(R.id.card_no_cb)
+        val expDate = dialogBinding.findViewById<CheckBox>(R.id.card_expiry_date_cb)
+        val cvv = dialogBinding.findViewById<CheckBox>(R.id.card_cvv_cb)
+        val cardPin = dialogBinding.findViewById<CheckBox>(R.id.atm_pin_cb)
+        val upiPin = dialogBinding.findViewById<CheckBox>(R.id.upi_pin_cb)
+        val appLogin = dialogBinding.findViewById<CheckBox>(R.id.app_login_cb)
+        val tPin = dialogBinding.findViewById<CheckBox>(R.id.transaction_pin_cb)
+        val remarks = dialogBinding.findViewById<CheckBox>(R.id.remarks_cb)
+
+        if (bankName.isChecked) {
+            selectedItems.add("${getString(R.string.bank_name)}: ${binding.bankName.text.toString()}\n")
+        }
+        if (acHolderName.isChecked) {
+            selectedItems.add("${binding.acHolderNameTitle.text}: ${binding.acHolderName.text}\n")
+        }
+        if (acType.isChecked) {
+            selectedItems.add("${getString(R.string.account_type)}: ${binding.acType.text}\n")
+        }
+        if (acNo.isChecked) {
+            selectedItems.add("${getString(R.string.account_no)}: ${binding.acNo.text}\n")
+        }
+        if (ifscNo.isChecked) {
+            selectedItems.add("${getString(R.string.ifsc_code)}: ${binding.ifscNo.text}\n")
+        }
+        if (regMobNo.isChecked) {
+            selectedItems.add("${getString(R.string.mobile_no)}: ${binding.acMob.text}\n")
+        }
+        if (regEmail.isChecked) {
+            selectedItems.add("${getString(R.string.bank_email)}: ${binding.acEmail.text}\n")
+        }
+        if (remarks.isChecked) {
+            selectedItems.add("${binding.acRemarksTitle.text}: ${binding.acRemarks.text}\n")
+        }
+        if (nameOnCard.isChecked) {
+            selectedItems.add("${getString(R.string.name_on_card)}: ${binding.acCardName.text}\n")
+        }
+        if (cardNo.isChecked) {
+            selectedItems.add("${getString(R.string.card_no)}: ${binding.acCardNo.text}\n")
+        }
+        if (expDate.isChecked) {
+            selectedItems.add("${getString(R.string.expiry_date)}: ${binding.acCardExpiryDate.text}\n")
+        }
+        if (cvv.isChecked) {
+            selectedItems.add("${getString(R.string.cvv)}: ${binding.acCardCvv.text}\n")
+        }
+        if (cardPin.isChecked) {
+            selectedItems.add("${getString(R.string.atm_pin)}: ${binding.acCardAtmPin.text}\n")
+        }
+        if (upiPin.isChecked) {
+            selectedItems.add("${getString(R.string.upi_pin)}: ${binding.acUpiPin.text}\n")
+        }
+        if (appLogin.isChecked) {
+            selectedItems.add("${getString(R.string.mobile_login_pin)}: ${binding.acMobPin.text}\n")
+        }
+        if (tPin.isChecked) {
+            selectedItems.add("${getString(R.string.transaction_Pin)}: ${binding.acTransactionPin.text}\n")
+        }
+
+        val shareDetails = StringBuilder()
+        for (field in selectedItems) {
+            shareDetails.append(field)
+        }
+        val intent = Intent(Intent.ACTION_SEND)
+            .setType("text/plain")
+            .putExtra(Intent.EXTRA_SUBJECT, getString(R.string.bank_ac_details))
+            .putExtra(Intent.EXTRA_TEXT, shareDetails.toString())
+
+        if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
+            startActivity(intent)
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()

@@ -11,9 +11,9 @@
     <string name="category_screen_text_bank">You haven\'t added any Bank Accounts yet, click on the + button to add your first Card ;)</string>
     <string name="category_screen_text_socialmedia">You haven\'t added any Social Media Accounts yet, click on the + button to add your first Card ;)</string>
     <string name="category_screen_text_email">You haven\'t added any Email Accounts yet, click on the + button to add your first Card ;)</string>
-    <string name="bank_name">"Bank\'s Name"</string>
-    <string name="account_holder_name">"Account Holder\'s Name"</string>
-    <string name="account_type">"Account Type"</string>
+    <string name="bank_name">Bank\'s Name</string>
+    <string name="account_holder_name">Account Holder\'s Name</string>
+    <string name="account_type">Account Type</string>
     <string name="enter_bank_details">"Enter your Account Details"</string>
     <string name="enter_extra_details">Add extra Details</string>
     <string name="card_details_question">Do you use ATM card with this bank Account?</string>
@@ -109,6 +109,11 @@
     <string name="bank_of_india">"Bank of India"</string>
     <string name="union_bank">"Union Bank of India"</string>
     <string name="icici_bank">"ICICI Bank"</string>
+    <string name="share_title">Share your Account Details</string>
+    <string name="share_desc">Select which fields you want to share</string>
+    <string name="share">SHARE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="all">All</string>
     <string-array name="AccountTypes">
         <item>Saving</item>
         <item>Current</item>

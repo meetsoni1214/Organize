@@ -94,6 +94,7 @@ class BankOneFragment : Fragment() {
             }
         }else {
             binding.apply {
+                bankLogo.setImageResource(R.drawable.bank_image_2)
                 atmCardOptions.check(R.id.atm_card_option_yes)
                 upiOption.check(R.id.upi_option_yes)
                 bankingAppOption.check(R.id.banking_app_option_yes)
@@ -145,28 +146,50 @@ class BankOneFragment : Fragment() {
                 updateAccount()
             }
         }
-        if (bankAccount.haveCard) {
-            binding.atmCardOptions.check(R.id.atm_card_option_yes)
-            unhideCardView()
-        }else {
-            binding.atmCardOptions.check(R.id.atm_card_option_no)
-            hideCardView()
-        }
-        if (bankAccount.haveUpi) {
-            binding.upiOption.check(R.id.upi_option_yes)
-            unhideUPIView()
-        }else {
-            binding.upiOption.check(R.id.upi_option_no)
-            hideUPIView()
-        }
-        if (bankAccount.haveApp) {
-            binding.bankingAppOption.check(R.id.banking_app_option_yes)
-            unhideAppView()
-        }else {
-            binding.bankingAppOption.check(R.id.banking_app_option_no)
-            hideAppView()
-        }
-
+            when (bankAccount.bankName) {
+                getString(R.string.bank_of_baroda) -> {
+                    binding.bankLogo.setImageResource(R.drawable.bank_of_baroda_logo)
+                }
+                getString(R.string.kalupur_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.kalupur_bank_logo)
+                }
+                getString(R.string.state_bank_india) -> {
+                    binding.bankLogo.setImageResource(R.drawable.sbi_logo)
+                }
+                getString(R.string.bank_of_india) -> {
+                    binding.bankLogo.setImageResource(R.drawable.boi)
+                }
+                getString(R.string.union_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.union_bank)
+                }
+                getString(R.string.icici_bank) -> {
+                    binding.bankLogo.setImageResource(R.drawable.icici_logo)
+                }
+                else -> {
+                    binding.bankLogo.setImageResource(R.drawable.bank_image_2)
+                }
+            }
+            if (bankAccount.haveCard) {
+                binding.atmCardOptions.check(R.id.atm_card_option_yes)
+                unhideCardView()
+            } else {
+                binding.atmCardOptions.check(R.id.atm_card_option_no)
+                hideCardView()
+            }
+            if (bankAccount.haveUpi) {
+                binding.upiOption.check(R.id.upi_option_yes)
+                unhideUPIView()
+            } else {
+                binding.upiOption.check(R.id.upi_option_no)
+                hideUPIView()
+            }
+            if (bankAccount.haveApp) {
+                binding.bankingAppOption.check(R.id.banking_app_option_yes)
+                unhideAppView()
+            } else {
+                binding.bankingAppOption.check(R.id.banking_app_option_no)
+                hideAppView()
+            }
     }
     private fun addBankAccount() {
         if (isEntryValid()) {

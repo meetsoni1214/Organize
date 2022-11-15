@@ -29,18 +29,23 @@
                 android:padding="6dp"
                 android:scaleType="fitStart"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
                 android:id="@+id/social_media_icon_name"
                 style="@style/TextAppearance.AppCompat.Headline"
-                android:layout_width="wrap_content"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
                 app:layout_constraintBottom_toBottomOf="@id/social_media_icon"
                 app:layout_constraintStart_toEndOf="@id/social_media_icon"
                 app:layout_constraintTop_toTopOf="@id/social_media_icon"
-                tools:text="Icon Name" />
+                tools:text="Email Id for Marketing " />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
